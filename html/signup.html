@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      html, body {
+        margin: 0;
+        font-family: Helvetica;
+      }
+
+      .centered-form{
+        width: 300px;
+        margin: 200px auto;
+        text-align: center;
+      }
+
+      .row{
+        display: table-row;
+      }
+
+      .row label{
+        display: table-cell;
+        margin: 10px;
+        text-align: left;
+      }
+
+      .row input{
+        display: table-cell;
+        margin: 10px;
+        width: 100%;
+      }
+
+      header{
+        height: 60px;
+        background-color: white;
+        text-align: center;
+        font-size: 30px;
+        padding: 10px 0 0 0;
+      }
+    </style>
+  </head>
+
+  <header>
+    Signup
+  </header>
+
+  <body>
+    <div class="centered-form">
+    <form class="signup-form" action="../../BackEnd/includes/signup.php" method="post">
+      <table>
+        <div class="row">
+          <label for="name">Name</label><input type="text" name="name" value="maria">
+        </div>
+        <div class="row">
+          <label for="username">Username</label><input type="text" name="username" value="maria">
+        </div>
+        <div class="row">
+            <label for="password">Password</label><input type="password" name="password" value="">
+        </div>
+          <button type="submit" name="submit-signup">Sign Up</button>
+      </table>
+    </form>
+    </div>
+    
+  </body>
+</html>

@@ -1,0 +1,33 @@
+:root {
+  --main-bg-color: #c1c0c0;
+  --main-acc-color: #c5c5c5;
+}
+
+header {
+  background-color: #f1f1f1;
+  height: 30px;
+  padding: 10px;
+}
+
+header #logged-user{
+  float: left;
+  font-family: Helvetica;
+}
+
+header .aaa {
+  float: right;
+}
+
+header a{
+  text-decoration: none;
+  color: black;
+}
+
+header #logout{
+  display: none;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  margin: 0;
+}
