@@ -4,7 +4,8 @@
   --accent-color: #958A85;
   --secondary-light: #d5daf1;
   --secondary-dark: #11101f;
-  --alert-color: #fd0303;
+  --alert-color: #d80c0c;
+  --success-color: #126412;
 }
 
 html body{
@@ -23,7 +24,7 @@ header {
   background-color: var(--main-light);
   color: var(--main-dark);
   text-align: center;
-  font-size: 30px;
+  font-size: 40px;
   padding: 10px;
 }
 
@@ -59,6 +60,6 @@ header {
 }
 
 
-.error{
-  color: var(--alert-color);
+.log {
+  display: none;
 }
