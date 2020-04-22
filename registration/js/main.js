@@ -1,3 +1,5 @@
+alert('jajaja');
+
 window.onload = () => {
   var url = window.location.search.substring(1);
 
@@ -20,7 +22,7 @@ window.onload = () => {
         log.innerHTML = "You must fill all the fields!";
       }else if (get['error'] == "incorrect") {
         log.innerHTML = "Username or password incorrect!";
-      }      
+      }
     }
     else{
       log.innerHTML = "Unknown error :(";
