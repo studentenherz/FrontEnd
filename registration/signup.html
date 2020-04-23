@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <script type="text/javascript" src="js/go.js"></script>
     <link rel="stylesheet" href="css/login.css">
   </head>
 
@@ -12,16 +13,17 @@
 
   <body>
     <div class="centered-form">
-    <form class="signup-form" action="../../BackEnd/includes/signup.php" method="post">
-        <p class="log" id="signup-log">asd</p>
-        <input type="text" name="name" placeholder="name"> <br>
-        <input type="text" name="username" placeholder="username"> <br>
-        <input type="password" name="password" placeholder="password"> <br>
-        <button type="submit" name="submit-signup">Sign Up</button><br>
-    </form>
-    <p>Already signed up? <a href="login.html">Login</a></p>
+    <p class="log" id="signup-log">asd</p>
+      <div class="form">
+        <form action="../../BackEnd/includes/signup.php" method="post">
+            <input type="text" name="name" placeholder="name"> <br>
+            <input type="text" name="username" placeholder="username"> <br>
+            <input type="password" name="password" placeholder="password"> <br>
+            <button type="submit" name="submit-signup">Sign Up</button><br>
+            <p>Already signed up? <a href="login.html">Login</a></p>
+        </form>
+      </div>
     </div>
-
   </body>
 
   <script type="text/javascript" src="js/main.js"></script>
