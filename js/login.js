@@ -23,7 +23,7 @@ window.onload = () => {
       localStorage.setItem('username', get['username']);
       localStorage.setItem('token', get['token']);
 
-      setTimeout(()=>{window.location.assign("index.html")}, 2000);
+      setTimeout(()=>{window.location.assign("index.html")}, 200000);
     }
     else if(get['login'] == "error")
     {
