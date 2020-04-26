@@ -20,11 +20,13 @@
     </header>
 
       <button onclick="signup()">Sign Up</button>
-        <button onclick="login()">Login</button>
+      <button onclick="login()">Login</button>
+      <button id="logout-button" onclick="logout()">Logout</button>
+
 
       <div class="modal" id="login-modal">
 
-        <form class="modal-content" action="../BackEnd/includes/login.php" method="post">
+        <form class="modal-content animate" id="login-form" action="../BackEnd/includes/login.php" method="post">
 
           <div class="imgcontainer">
             <span class="closex" onclick="document.getElementById('login-modal').style.display='none'">&times;</span>
@@ -48,7 +50,7 @@
 
       <div class="modal" id="signup-modal">
 
-        <form class="modal-content" action="../BackEnd/includes/signup.php" method="post">
+        <form id="signup-form" class="modal-content animate" action="../BackEnd/includes/signup.php" method="post">
 
           <div class="imgcontainer">
             <span class="closex" onclick="document.getElementById('signup-modal').style.display='none'">&times;</span>
@@ -74,5 +76,5 @@
 
 
   <script type="text/javascript" src="js/main.js"></script>
-  <script type="text/javascript" src="js/login.js"></script>
+  <script type="text/javascript" src="js/submit.js"></script>
 </html>

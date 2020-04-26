@@ -11,7 +11,7 @@
 }
 
 body{
-  background-color: white;
+  /* background-color: white; */
 }
 
 .modal {
@@ -41,6 +41,7 @@ body{
     width: 480px;
   }
 }
+
 
 .imgcontainer {
   text-align: center;
@@ -101,10 +102,37 @@ img.avatar{
   cursor: pointer;
 }
 
+@media screen and (max-width: 500px){
+  .modal button{
+    width: 120px;
+  }
+}
+
 .span-button{
   color: blue;
 }
 
 .span-button:hover{
   cursor: pointer;
+}
+
+.log{
+  display: none;
+}
+
+/* Animations */
+
+.animate{
+  -webkit-animation: zoomanimate 0.6s;
+  animation: zoomanimate 0.6s;
+}
+
+@-webkit-keyframes zoomanimate {
+  from {transform: scale(0);}
+  to {transform: scale(1);}
+}
+
+@keyframes zoomanimate {
+  from {transform: scale(0);}
+  to {transform: scale(1);}
 }
