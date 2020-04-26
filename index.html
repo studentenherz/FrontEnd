@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+
     <link rel="stylesheet" href="css/master.css">
   </head>
   <header>
-    <div id="logged-user">María</div>
+    <!-- <div id="logged-user">María</div>
 
     <div class="right-box">
       <div id="login-div" style="display: none">
@@ -14,14 +15,64 @@
         <a href="registration/signup.html">signup</a>
       </div>
       <button id="logout-button" style="display: none" type="button" name="logout-button">logout</button>
+      </div> -->
+
+    </header>
+
+      <button onclick="signup()">Sign Up</button>
+        <button onclick="login()">Login</button>
+
+      <div class="modal" id="login-modal">
+
+        <form class="modal-content" action="../BackEnd/includes/login.php" method="post">
+
+          <div class="imgcontainer">
+            <span class="closex" onclick="document.getElementById('login-modal').style.display='none'">&times;</span>
+            <img class="avatar" src="sources/user.svg" alt="use">
+          </div>
+
+          <div class="container">
+            <p class="log" id="login-log">sad</p>
+            <input type="text" name="username" placeholder="username" value="michel"> <br>
+            <input type="password" name="password" placeholder="password" value="America++11"> <br>
+            <button type="submit" name="login-submit">Login</button><br>
+          </div>
+
+          <div class="container" style="background-color:#f2f2f2">
+            <p>You don't have an accout? <span class="span-button" onclick="signup()" >SignUp</span> </p>
+          </div>
+
+        </form>
       </div>
 
 
+      <div class="modal" id="signup-modal">
+
+        <form class="modal-content" action="../BackEnd/includes/signup.php" method="post">
+
+          <div class="imgcontainer">
+            <span class="closex" onclick="document.getElementById('signup-modal').style.display='none'">&times;</span>
+            <img class="avatar" src="sources/user.svg" alt="use">
+          </div>
+
+          <div class="container">
+            <p class="log" id="signup-log">asd</p>
+            <input type="text" name="name" placeholder="name"> <br>
+            <input type="text" name="username" placeholder="username"> <br>
+            <input type="password" name="password" placeholder="password"> <br>
+            <button type="submit" name="submit-signup">Sign Up</button><br>
+          </div>
+
+          <div class="container" style="background-color:#f2f2f2">
+            <p>You don't have an accout? <span class="span-button" onclick="login()" >Login</span> </p>
+          </div>
+
+        </form>
+      </div>
 
   </header>
-  <body>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </body>
+
 
   <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript" src="js/login.js"></script>
 </html>
