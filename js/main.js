@@ -48,3 +48,13 @@ function load(url, element) {
 }
 
 load("sources/header.html", document.getElementsByTagName("header")[0]);
+
+window.onload = function() {
+  var profile = document.querySelector("#user");
+
+  profile.addEventListener("click", function(){
+    if(localStorage['token'] == undefined){
+      login();
+    }
+  });
+}
