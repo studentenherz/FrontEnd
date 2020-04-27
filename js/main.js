@@ -58,3 +58,6 @@ window.onload = function() {
     }
   });
 }
+
+var file = fopen("text.txt");
+fwrite(file, "Hello there");
