@@ -115,18 +115,8 @@ signupForm.onsubmit = function (event) {
 
 function logout() {
   var logoutBtn = document.getElementById("logout-button");
-  var loginDiv = document.getElementById("login-div");
 
-  if(localStorage["token"] != undefined){
-    logoutBtn.style.display = "block";
-  }
-  else{
-    loginDiv.style.display = "block";
-  }
-
-  logoutBtn.addEventListener('click', () =>{
     xhttp = new XMLHttpRequest();
-
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200){
         localStorage.removeItem("token");
@@ -144,7 +134,4 @@ function logout() {
     }
     xhttp.setRequestHeader("Content-Type",  "application/json");
     xhttp.send(JSON.stringify(payload));
-
-  });
-
 }

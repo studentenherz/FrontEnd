@@ -8,10 +8,12 @@
   --secondary-dark: #11101f;
   --alert-color: #d80c0c;
   --success-color: #126412;
+  --header-color: #e1e1de;
 }
 
 body{
-  /* background-color: white; */
+  background-color: var(--main-bg-color);
+  margin: 0;
 }
 
 .modal {
@@ -26,8 +28,9 @@ body{
   background-color: #000000;
   background-color: #00000066;
   padding-top: 60px;
-  font-size: 20px
+  font-size: 20px;
 }
+
 
 .modal-content{
   background-color: var(--main-bg-color);
@@ -135,4 +138,32 @@ img.avatar{
 @keyframes zoomanimate {
   from {transform: scale(0);}
   to {transform: scale(1);}
+}
+
+header {
+  background : var(--header-color);
+  padding : 4px 12px;
+  height : 60px;
+  position: relative;
+}
+
+header .profile{
+  position : absolute;
+  right : 12px;
+  bottom: 5;
+  width : 60px;
+}
+
+header .profile img{
+  width : 100%;
+  border : none;
+  border-radius : 50%;
+}
+
+header .profile img:hover{
+  opacity : 0.8;
+}
+
+.dropdown{
+  /* display: none; */
 }
