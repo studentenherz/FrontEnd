@@ -43,7 +43,7 @@ function load(url, element) {
       }
     };
 
-    req.open("GET", url, true);
+    req.open("GET", url, false);
     req.send(null);
 }
 
