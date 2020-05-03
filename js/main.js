@@ -111,6 +111,7 @@ console.log(filesArray);
 
 shareBtn.addEventListener('click', () => {
   if (navigator.canShare && navigator.canShare({files: filesArray })) {
+    alert("puedes compartir");
     navigator.share({
       files: filesArray,
       title: 'Prueba',
