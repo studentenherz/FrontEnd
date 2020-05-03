@@ -110,10 +110,22 @@ filesArray.push(file);
 console.log(filesArray);
 
 shareBtn.addEventListener('click', () => {
-  if (navigator.canShare && navigator.canShare({files: filesArray })) {
-    alert("puedes compartir");
+  // if (navigator.canShare && navigator.canShare({files: filesArray })) {
+  //   alert("puedes compartir");
+  //   navigator.share({
+  //     files: filesArray,
+  //     title: 'Prueba',
+  //     text: 'It worked!'
+  //   }).then(()=> console.log('Successfully shared.'))
+  //   .catch((error)=> console.log('Unsuccesful sharing', error));
+  // }
+  // else{
+  //   alert(`You're system doesn't support file sharing`);
+  // }
+  if (navigator.share) {
+    // alert("puedes compartir");
     navigator.share({
-      files: filesArray,
+      // files: filesArray,
       title: 'Prueba',
       text: 'It worked!'
     }).then(()=> console.log('Successfully shared.'))
