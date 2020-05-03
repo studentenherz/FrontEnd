@@ -122,6 +122,7 @@ shareBtn.addEventListener('click', () => {
   // else{
   //   alert(`You're system doesn't support file sharing`);
   // }
+  alert("sí");
   if (navigator.share) {
             navigator.share({
                     title: "title.value",
