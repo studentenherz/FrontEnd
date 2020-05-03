@@ -99,3 +99,25 @@ inpPic.addEventListener("change", function(){
     profilePic.setAttribute("src", "sources/user.svg");
   }
 });
+
+
+const shareBtn = document.getElementById("share-btn");
+
+var filesArray = new Array();
+filesArray.push("sources/frase1.svg");
+
+console.log(filesArray);
+
+shareBtn.addEventListener('click', () => {
+  if (navigator.canShare && navigator.canShare({files: filesArray })) {
+    navigator.share({
+      files: filesArray,
+      title: 'Prueba',
+      text: 'It worked!',
+    }).then(()=> console.log('Successfully shared.'))
+    .catch((error)=> console.log('Unsuccesful sharing', error));
+  }
+  else{
+    alert(`You're system doesn't support file sharing`);
+  }
+});
