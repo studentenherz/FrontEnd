@@ -123,12 +123,6 @@ img.avatar{
   margin: 2vh auto;
 }
 
-@media screen and (max-width: 500px){
-  .modal button{
-    width: 120px;
-  }
-}
-
 .span-button{
   color: blue;
 }
