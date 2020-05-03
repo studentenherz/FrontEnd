@@ -204,7 +204,13 @@ img.avatar{
   margin: auto;
 }
 
+<<<<<<< HEAD
 .profile-image label:hover {
     background: #f1f1f1;
     border-color: #d6d6d6;
+=======
+header .profile img:hover{
+  opacity : 0.8;
+  cursor: pointer;
+>>>>>>> fc87da19fbd91305f0cc0f00cb8bd863621e77f1
 }
