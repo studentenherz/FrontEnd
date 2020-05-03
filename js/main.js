@@ -68,16 +68,17 @@ function load(url, element) {
 
 var userHello = document.getElementById("user-hello");
 var editPicture = document.getElementById("edit-picture");
+const loginBtn = document.getElementById("loginBtn");
 
 if(localStorage['token'] == undefined){
-  document.getElementById("loginBtn").style.display = 'block';
-  document.getElementById("logoutBtn").style.display = 'none';
+  loginBtn.style.display = 'block';
+  logoutBtn.style.display = 'none';
   userHello.innerHTML = ':)';
   editPicture.style.display = 'none';
 }
 else{
-  document.getElementById("loginBtn").style.display = 'none';
-  document.getElementById("logoutBtn").style.display = 'block';
+  loginBtn.style.display = 'none';
+  logoutBtn.style.display = 'block';
   userHello.innerHTML = localStorage["name"]+ "!";
   editPicture.style.display = 'inline-block';
 }
@@ -101,15 +102,15 @@ inpPic.addEventListener("change", function(){
 });
 
 
-const shareBtn = document.getElementById("share-btn");
+// const shareBtn = document.getElementById("share-btn");
+//
+// var filesArray = new Array();
+// var file = new File(["foo"], "sources/frase1.svg");
+// filesArray.push(file.value);
 
-var filesArray = new Array();
-var file = new File(["foo"], "sources/frase1.svg");
-filesArray.push(file.value);
-
-console.log(filesArray);
-
-shareBtn.onclick = function() {
+// console.log(filesArray);
+//
+// shareBtn.onclick = function() {
   // if (navigator.canShare && navigator.canShare({files: filesArray })) {
   //   // alert("puedes compartir");
   //   navigator.share({
@@ -123,16 +124,16 @@ shareBtn.onclick = function() {
   //   alert(`You're system doesn't support file sharing`);
   // }
   // alert("sí");
-  const image = new URL("src/frase1.svg", "http://127.0.0.1/FrontEnd");
-  if (navigator.share) {
-            navigator.share({
-                    title: "title.value",
-                    text: "jaja",
-                    url: image,
-                })
-                .then(() => console.log('Successful share'))
-                .catch((error) => console.log('Error sharing', error));
-        } else {
-            console.log("Web Share API is not supported in your browser.")
-        }
-}
+//   const image = new URL("src/frase1.svg", "http://127.0.0.1/FrontEnd");
+//   if (navigator.share) {
+//             navigator.share({
+//                     title: "title.value",
+//                     text: "jaja",
+//                     url: image,
+//                 })
+//                 .then(() => console.log('Successful share'))
+//                 .catch((error) => console.log('Error sharing', error));
+//         } else {
+//             console.log("Web Share API is not supported in your browser.")
+//         }
+// }

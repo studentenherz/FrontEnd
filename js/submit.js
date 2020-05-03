@@ -1,3 +1,6 @@
+// const backEndUrl = "../BackEnd/"
+const backEndUrl = "https://pato-1.herokuapp.com/";
+
 /**********************************
 *         Login login             *
 ***********************************/
@@ -44,7 +47,7 @@ loginForm.onsubmit = function (event) {
     }
   };
 
-  xhttp.open("POST",  "../BackEnd/includes/login.php", true);
+  xhttp.open("POST",  backEndUrl + "includes/login.php", true);
   requestBody = {
     submit: true,
     username : username,
@@ -98,7 +101,7 @@ signupForm.onsubmit = function (event) {
     }
   };
 
-  xhttp.open("POST",  "../BackEnd/includes/signup.php", true);
+  xhttp.open("POST",  backEndUrl + "includes/signup.php", true);
   requestBody = {
     submit: true,
     name : name,
@@ -128,7 +131,7 @@ logoutBtn.onclick = function () {
       }
     };
 
-    xhttp.open("POST", "../BackEnd/includes/logout.php", true);
+    xhttp.open("POST", backEndUrl+"includes/logout.php", true);
     payload = {
       logout: true,
       token: localStorage["token"]
