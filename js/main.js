@@ -104,7 +104,8 @@ inpPic.addEventListener("change", function(){
 const shareBtn = document.getElementById("share-btn");
 
 var filesArray = new Array();
-filesArray.push("sources/frase1.svg");
+var file = new File(["foo"], "sources/frase1.svg");
+filesArray.push(file);
 
 console.log(filesArray);
 
@@ -113,7 +114,7 @@ shareBtn.addEventListener('click', () => {
     navigator.share({
       files: filesArray,
       title: 'Prueba',
-      text: 'It worked!',
+      text: 'It worked!'
     }).then(()=> console.log('Successfully shared.'))
     .catch((error)=> console.log('Unsuccesful sharing', error));
   }
