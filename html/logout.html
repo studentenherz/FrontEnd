@@ -1,10 +1,9 @@
 
 <div class="modal-content animate">
-  <form  action="../BackEnd/includes/upload.php" method="post" enctype="multipart/form-data">
+  <form  action="../BackEnd/includes/upload.php" method="post" enctype="multipart/form-data" style="text-align: center">
 
   <div class="imgcontainer">
     <span class="closex" onclick="document.getElementById('logout-modal').style.display='none'">&times;</span>
-
     <div class="profile-image">
 
         <input type="file" id="inp-image">
@@ -18,12 +17,11 @@
     <p>Hello <span id="user-hello">:)</span> </p>
   </div>
 
-  <div>
-    <button type="submit" name="submit-image">UPLOAD</button>
+    <button type="submit" name="submit-image" id="submit-image" style= "display:none">Save profile</button>
+    <div class="separator"></div>
     <button type="button" onclick="login()" id="loginBtn"> Login
     </button>
-    <div class="seperator"></div>
-    <button type="button" id="logoutBtn">Logout</button>
-  </div>
+    <button type="button" id="logoutBtn" style="background-color: var(--alert-color)">Logout</button>
+
   </form>
 </div>

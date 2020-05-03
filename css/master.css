@@ -1,14 +1,9 @@
 :root {
   --main-bg-color: #fefefe;
   --main-acc-color: #c5c5c5;
-  --main-dark: #0e0e0e;
-  --main-light: #9293b0;
-  --accent-color: #958A85;
-  --secondary-light: #d5daf1;
-  --secondary-dark: #11101f;
   --alert-color: #d80c0c;
   --success-color: #126412;
-  --header-color: #e1e1de;
+  --button-color: #4CAF50;
 }
 
 body{
@@ -104,7 +99,7 @@ img.avatar{
 }
 
 .modal button{
-  width: 30%;
+  /* width: 30%; */
   padding: 8px 20px;
   margin: 8px auto;
   display: inline-block;
@@ -113,12 +108,19 @@ img.avatar{
   border: none;
   font-size: 20px;
   color: white;
-  background-color: #4CAF50;
+  background-color: var(--button-color);
 }
 
 .modal button:hover{
   opacity: 0.8;
   cursor: pointer;
+}
+
+.separator{
+  width: 90%;
+  height: 2px;
+  background-color: #cacaca;
+  margin: 2vh auto;
 }
 
 @media screen and (max-width: 500px){

@@ -66,8 +66,9 @@ else{
   editPicture.style.display = 'inline-block';
 }
 
-var inpPic = document.getElementById("inp-image");
-var profilePic = document.getElementById("profile-pic");
+const inpPic = document.getElementById("inp-image");
+const profilePic = document.getElementById("profile-pic");
+const submitImg = document.getElementById("submit-image");
 
 inpPic.addEventListener("change", function(){
   const file = this.files[0];
@@ -79,8 +80,10 @@ inpPic.addEventListener("change", function(){
     });
 
     reader.readAsDataURL(file);
+    submitImg.style.display = 'block';
   } else{
     profilePic.setAttribute("src", "sources/user.svg");
+    submitImg.style.display = 'none';
   }
 });
 
