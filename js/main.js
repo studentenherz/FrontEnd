@@ -1,4 +1,3 @@
-
 var loginModal = document.getElementById('login-modal');
 var signupModal = document.getElementById('signup-modal');
 var logoutModal = document.getElementById('logout-modal');
@@ -49,22 +48,6 @@ function logout(){
     // alert("You are not logged in!");
   // }
 }
-
-function load(url, element) {
-    req = new XMLHttpRequest();
-
-    req.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        // Typical action to be performed when the document is ready:
-        element.innerHTML = req.responseText;
-      }
-    };
-
-    req.open("GET", url, false);
-    req.send(null);
-}
-
-// load("sources/header.html", document.getElementsByTagName("header")[0]);
 
 var userHello = document.getElementById("user-hello");
 var editPicture = document.getElementById("edit-picture");

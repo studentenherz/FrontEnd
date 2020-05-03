@@ -1,0 +1,29 @@
+
+<div class="modal-content animate">
+  <form  action="../BackEnd/includes/upload.php" method="post" enctype="multipart/form-data">
+
+  <div class="imgcontainer">
+    <span class="closex" onclick="document.getElementById('logout-modal').style.display='none'">&times;</span>
+
+    <div class="profile-image">
+
+        <input type="file" id="inp-image">
+        <label id="edit-picture" for="inp-image">&#x270E;</label>
+
+
+      <img  id="profile-pic" class="avatar" src="sources/user.svg" alt="use">
+    </div>
+
+
+    <p>Hello <span id="user-hello">:)</span> </p>
+  </div>
+
+  <div>
+    <button type="submit" name="submit-image">UPLOAD</button>
+    <button type="button" onclick="login()" id="loginBtn"> Login
+    </button>
+    <div class="seperator"></div>
+    <button type="button" id="logoutBtn">Logout</button>
+  </div>
+  </form>
+</div>

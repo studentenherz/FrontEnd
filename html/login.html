@@ -1,0 +1,19 @@
+<form class="modal-content animate" id="login-form" action="../BackEnd/includes/login.php" method="post">
+
+  <div class="imgcontainer">
+    <span class="closex" onclick="document.getElementById('login-modal').style.display='none'">&times;</span>
+    <img class="avatar" src="sources/user.svg" alt="use">
+  </div>
+
+  <div class="container">
+    <p class="log" id="login-log">sad</p>
+    <input type="text" name="username" placeholder="username"> <br>
+    <input type="password" name="password" placeholder="password"> <br>
+    <button type="submit" name="login-submit">Login</button><br>
+  </div>
+
+  <div class="container" style="background-color:#f2f2f2">
+    <p>You don't have an accout? <span class="span-button" onclick="signup()" >SignUp</span> </p>
+  </div>
+
+</form>
