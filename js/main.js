@@ -1,6 +1,7 @@
 
 var loginModal = document.getElementById('login-modal');
 var signupModal = document.getElementById('signup-modal');
+var logoutModal = document.getElementById('logout-modal');
 
 window.onclick = function(event){
   if(event.target == loginModal){
@@ -9,6 +10,9 @@ window.onclick = function(event){
   } else if(event.target == signupModal){
     signupModal.style.display = "none";
   }
+  else if (event.target == logoutModal) {
+    logoutModal.style.display = "none";
+  }
 };
 
 
@@ -16,6 +20,7 @@ window.onclick = function(event){
 function login() {
   if(localStorage['token'] == undefined){
     signupModal.style.display='none';
+    logoutModal.style.display='none';
     loginModal.style.display='block';
   }
   else{
@@ -26,11 +31,23 @@ function login() {
 function signup() {
   if(localStorage['token'] == undefined){
     loginModal.style.display='none';
+    logoutModal.style.display='none';
     signupModal.style.display='block';
   }
   else{
     alert("You are already logged in!");
   }
+}
+
+function logout(){
+  // if(localStorage['token'] != undefined){
+    loginModal.style.display='none';
+    signupModal.style.display='none';
+    logoutModal.style.display='block';
+  // }
+  // else{
+    // alert("You are not logged in!");
+  // }
 }
 
 function load(url, element) {
@@ -47,14 +64,38 @@ function load(url, element) {
     req.send(null);
 }
 
-load("sources/header.html", document.getElementsByTagName("header")[0]);
+// load("sources/header.html", document.getElementsByTagName("header")[0]);
 
-window.onload = function() {
-  var profile = document.querySelector("#user");
+var userHello = document.getElementById("user-hello");
+var editPicture = document.getElementById("edit-picture");
 
-  profile.addEventListener("click", function(){
-    if(localStorage['token'] == undefined){
-      login();
-    }
-  });
+if(localStorage['token'] == undefined){
+  document.getElementById("loginBtn").style.display = 'block';
+  document.getElementById("logoutBtn").style.display = 'none';
+  userHello.innerHTML = ':)';
+  editPicture.style.display = 'none';
 }
+else{
+  document.getElementById("loginBtn").style.display = 'none';
+  document.getElementById("logoutBtn").style.display = 'block';
+  userHello.innerHTML = localStorage["name"]+ "!";
+  editPicture.style.display = 'inline-block';
+}
+
+var inpPic = document.getElementById("inp-image");
+var profilePic = document.getElementById("profile-pic");
+
+inpPic.addEventListener("change", function(){
+  const file = this.files[0];
+  if (file){
+    const reader =  new FileReader();
+
+    reader.addEventListener("load", function(){
+      profilePic.setAttribute("src", this.result);
+    });
+
+    reader.readAsDataURL(file);
+  } else{
+    profilePic.setAttribute("src", "sources/user.svg");
+  }
+});

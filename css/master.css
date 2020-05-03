@@ -20,23 +20,28 @@ body{
 .modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   overflow: auto;
   background-color: #000000;
   background-color: #00000066;
-  padding-top: 60px;
+  /* padding-top: 60px; */
   font-size: 20px;
 }
 
 
 .modal-content{
   background-color: var(--main-bg-color);
-  margin: 5% auto 15% auto;
-  width: 80%;
+  /* margin: 5% auto 15% auto; */
+  --width: 80vw;
+  /* text-align: center; */
+  position: fixed;
+  bottom: 10vh;
+  left: calc(50vw - var(--width)/2);
+  width: var(--width);
   overflow: auto;
 }
 
@@ -67,6 +72,16 @@ body{
   cursor: pointer;
 }
 
+.profile-image{
+  width: 40%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.profile-image img.avatar{
+  width: 100%;
+}
+
 img.avatar{
   width: 40%;
   border-radius: 50%;
@@ -78,9 +93,9 @@ img.avatar{
 }
 
 .modal input{
-  width: 80%;
+  width: 90%;
   padding: 8px 20px;
-  margin: 8px 10%;
+  margin: 8px 5%;
   display: inline-block;
   box-sizing: border-box;
   border-radius: 20px;
@@ -91,7 +106,7 @@ img.avatar{
 .modal button{
   width: 30%;
   padding: 8px 20px;
-  margin: 8px 35%;
+  margin: 8px auto;
   display: inline-block;
   box-sizing: border-box;
   border-radius: 20px;
@@ -124,6 +139,26 @@ img.avatar{
   display: none;
 }
 
+#user {
+  --width: 8vh;
+  --margin: 3vh;
+  width: var(--width);
+  height: : var(--width);
+  position: fixed;
+  bottom: var(--margin);
+  right: var(--margin);
+  z-index: 1;
+}
+#user img{
+  width: 100%;
+  border: none;
+  border-radius: 50%;
+}
+
+#user:hover{
+  cursor: pointer;
+}
+
 /* Animations */
 
 .animate{
@@ -141,26 +176,35 @@ img.avatar{
   to {transform: scale(1);}
 }
 
-header {
-  background : var(--header-color);
-  padding : 4px 12px;
-  height : 120px;
-  position: relative;
+
+
+
+
+/* upload image */
+.profile-image input{
+  display: none;
 }
 
-header .profile{
-  position : absolute;
-  right : 12px;
-  bottom: 5;
-  width : 120px;
+.profile-image label{
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 0;
+  border-radius: 100%;
+  background: #FFFFFF;
+  border: 1px solid transparent;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  font-weight: normal;
+  transition: all .2s ease-in-out;
+  position: absolute;
+  bottom: 3%;
+  right: 8%;
+  text-align: center;
+  margin: auto;
 }
 
-header .profile img{
-  width : 100%;
-  border : none;
-  border-radius : 50%;
-}
-
-header .profile img:hover{
-  opacity : 0.8;
+.profile-image label:hover {
+    background: #f1f1f1;
+    border-color: #d6d6d6;
 }

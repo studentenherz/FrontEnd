@@ -3,12 +3,44 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-
+     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="css/master.css">
   </head>
-  <header>Header</header>
 
   <body>
+
+    <div id="user" onclick="logout()">
+      <img src="sources/user.svg" alt="user" >
+    </div>
+
+    <div class="modal" id="logout-modal">
+      <div class="modal-content animate">
+        <form  action="../BackEnd/includes/upload.php" method="post" enctype="multipart/form-data">
+
+        <div class="imgcontainer">
+          <span class="closex" onclick="document.getElementById('logout-modal').style.display='none'">&times;</span>
+
+          <div class="profile-image">
+
+              <input type="file" id="inp-image">
+              <label id="edit-picture" for="inp-image">&#x270E;</label>
+
+
+            <img  id="profile-pic" class="avatar" src="sources/user.svg" alt="use">
+          </div>
+
+
+          <p>Hello <span id="user-hello">:)</span> </p>
+        </div>
+
+        <div>
+          <button type="submit" name="submit-image">UPLOAD</button>
+          <button type="button" name="login" onclick="login()" id="loginBtn">Login</button>
+          <button type="button" name="button" id="logoutBtn">Logout</button>
+        </div>
+        </form>
+      </div>
+    </div>
 
     <div class="modal" id="login-modal">
 
@@ -21,8 +53,8 @@
 
         <div class="container">
           <p class="log" id="login-log">sad</p>
-          <input type="text" name="username" placeholder="username" value="michel"> <br>
-          <input type="password" name="password" placeholder="password" value="America++11"> <br>
+          <input type="text" name="username" placeholder="username"> <br>
+          <input type="password" name="password" placeholder="password"> <br>
           <button type="submit" name="login-submit">Login</button><br>
         </div>
 
@@ -59,7 +91,7 @@
     </div>
 
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Esteeee or sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -70,6 +102,7 @@
   </body>
 
 
-  <script type="text/javascript" src="js/main.js"></script>
   <script type="text/javascript" src="js/submit.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+
 </html>

@@ -113,8 +113,9 @@ signupForm.onsubmit = function (event) {
 *         Log out                 *
 ***********************************/
 
-function logout() {
-  var logoutBtn = document.getElementById("logout-button");
+var logoutBtn = document.getElementById("logoutBtn");
+
+logoutBtn.onclick = function () {
 
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
