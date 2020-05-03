@@ -123,15 +123,14 @@ shareBtn.addEventListener('click', () => {
   //   alert(`You're system doesn't support file sharing`);
   // }
   if (navigator.share) {
-    // alert("puedes compartir");
-    navigator.share({
-      // files: filesArray,
-      title: 'Prueba',
-      text: 'It worked!'
-    }).then(()=> console.log('Successfully shared.'))
-    .catch((error)=> console.log('Unsuccesful sharing', error));
-  }
-  else{
-    alert(`You're system doesn't support file sharing`);
-  }
+            navigator.share({
+                    title: "title.value",
+                    text: "jaja",
+                    url: "url.value",
+                })
+                .then(() => console.log('Successful share'))
+                .catch((error) => console.log('Error sharing', error));
+        } else {
+            console.log("Web Share API is not supported in your browser.")
+        }
 });
