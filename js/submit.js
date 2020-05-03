@@ -1,5 +1,6 @@
 // const backEndUrl = "../BackEnd/"
-const backEndUrl = "https://pato-1.herokuapp.com/";
+const corsProxy =  "https://cors-anywhere.herokuapp.com/";
+const backEndUrl = corsProxy + "https://pato-1.herokuapp.com/";
 
 /**********************************
 *         Login login             *
