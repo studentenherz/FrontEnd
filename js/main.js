@@ -82,7 +82,6 @@ else{
   editPicture.style.display = 'inline-block';
 }
 
-<<<<<<< HEAD
 var inpPic = document.getElementById("inp-image");
 var profilePic = document.getElementById("profile-pic");
 
@@ -100,7 +99,3 @@ inpPic.addEventListener("change", function(){
     profilePic.setAttribute("src", "sources/user.svg");
   }
 });
-=======
-var file = fopen("text.txt");
-fwrite(file, "Hello there");
->>>>>>> fc87da19fbd91305f0cc0f00cb8bd863621e77f1
