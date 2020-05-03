@@ -109,7 +109,7 @@ filesArray.push(file);
 
 console.log(filesArray);
 
-shareBtn.addEventListener('click', () => {
+shareBtn.onclick = function() {
   // if (navigator.canShare && navigator.canShare({files: filesArray })) {
   //   alert("puedes compartir");
   //   navigator.share({
@@ -134,4 +134,4 @@ shareBtn.addEventListener('click', () => {
         } else {
             console.log("Web Share API is not supported in your browser.")
         }
-});
+}
