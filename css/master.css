@@ -75,10 +75,6 @@ body{
 
 .profile-image img.avatar{
   width: 100%;
-}
-
-img.avatar{
-  width: 40%;
   border-radius: 50%;
 }
 
@@ -122,6 +118,7 @@ img.avatar{
   background-color: #cacaca;
   margin: 2vh auto;
 }
+
 
 .span-button{
   color: blue;
