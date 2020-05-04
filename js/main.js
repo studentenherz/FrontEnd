@@ -87,7 +87,6 @@ inpPic.addEventListener("change", function(){
   }
 });
 
-
 // const shareBtn = document.getElementById("share-btn");
 //
 // var filesArray = new Array();

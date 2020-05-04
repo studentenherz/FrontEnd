@@ -6,7 +6,7 @@ const backEndUrl = corsProxy + "https://pato-1.herokuapp.com/";
 *         Login login             *
 ***********************************/
 
-var loginForm = document.getElementById("login-form");
+const loginForm = document.getElementById("login-form");
 
 loginForm.onsubmit = function (event) {
   event.preventDefault();
@@ -139,4 +139,32 @@ logoutBtn.onclick = function () {
     }
     xhttp.setRequestHeader("Content-Type",  "application/json");
     xhttp.send(JSON.stringify(payload));
+}
+
+
+/**********************************
+*         Upload                 *
+***********************************/
+
+const uploadImage = document.getElementById("image-form");
+
+uploadImage.onsubmit = function(event){
+  event.preventDefault();
+
+  var data = new FormData(this);
+  data.append("username", localStorage["username"]);
+  data.append("token", localStorage["token"]);
+  data.append("upload_image", true);
+  // console.log(data);
+
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200){
+      console.log(this.responseText);
+    }
+  };
+
+  xhttp.open("POST", backEndUrl+"includes/upload.php", true);
+  // xhttp.setRequestHeader("Content-Type",  "application/json");
+  xhttp.send(data);
 }
