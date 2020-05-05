@@ -1,3 +1,7 @@
+//=======================================
+//       Modals behaviour
+//=======================================
+
 var loginModal = document.getElementById('login-modal');
 var signupModal = document.getElementById('signup-modal');
 var logoutModal = document.getElementById('logout-modal');
@@ -14,7 +18,7 @@ window.onclick = function(event){
   }
 };
 
-
+// display login form
 
 function login() {
   if(localStorage['token'] == undefined){
@@ -27,6 +31,8 @@ function login() {
   }
 }
 
+// display sign up form
+
 function signup() {
   if(localStorage['token'] == undefined){
     loginModal.style.display='none';
@@ -38,33 +44,68 @@ function signup() {
   }
 }
 
+// display log out form
+
 function logout(){
-  // if(localStorage['token'] != undefined){
     loginModal.style.display='none';
     signupModal.style.display='none';
     logoutModal.style.display='block';
-  // }
-  // else{
-    // alert("You are not logged in!");
-  // }
 }
+
+//================================
+//    User specific
+//================================
 
 var userHello = document.getElementById("user-hello");
 var editPicture = document.getElementById("edit-picture");
 const loginBtn = document.getElementById("loginBtn");
+var avatarURL = "sources/user.svg";
 
-if(localStorage['token'] == undefined){
-  loginBtn.style.display = 'block';
-  logoutBtn.style.display = 'none';
-  userHello.innerHTML = ':)';
-  editPicture.style.display = 'none';
+function reloadAvatar(){
+  document.querySelectorAll(".avatar").forEach(x => x.setAttribute('src', localStorage['avatar']));
 }
-else{
-  loginBtn.style.display = 'none';
-  logoutBtn.style.display = 'block';
-  userHello.innerHTML = localStorage["name"]+ "!";
-  editPicture.style.display = 'inline-block';
-}
+
+window.onload = function() {
+  if(localStorage['token'] == undefined){
+    loginBtn.style.display = 'block';
+    logoutBtn.style.display = 'none';
+    userHello.innerHTML = ':)';
+    editPicture.style.display = 'none';
+    localStorage.setItem('avatar', avatarURL);
+  }
+  else{
+
+    var data = new FormData();
+    data.append("username", localStorage["username"]);
+    data.append("token", localStorage["token"]);
+    data.append("validate", true);
+
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200){
+        // console.log(this.responseText);
+        const response = JSON.parse(this.responseText);
+
+        if(response['valid']){
+          localStorage.setItem('name', response['name']);
+          localStorage.setItem('avatar', backEndUrlRaw + response['avatar']);
+        }
+
+      }
+    };
+
+    xhttp.open("POST", backEndUrl+"includes/validate_user.php", false);
+    xhttp.send(data);
+
+    loginBtn.style.display = 'none';
+    logoutBtn.style.display = 'block';
+    userHello.innerHTML = localStorage["name"]+ "!";
+    editPicture.style.display = 'inline-block';
+  }
+
+  reloadAvatar();
+
+};
 
 const inpPic = document.getElementById("inp-image");
 const profilePic = document.getElementById("profile-pic");
@@ -86,39 +127,3 @@ inpPic.addEventListener("change", function(){
     submitImg.style.display = 'none';
   }
 });
-
-// const shareBtn = document.getElementById("share-btn");
-//
-// var filesArray = new Array();
-// var file = new File(["foo"], "sources/frase1.svg");
-// filesArray.push(file.value);
-
-// console.log(filesArray);
-//
-// shareBtn.onclick = function() {
-  // if (navigator.canShare && navigator.canShare({files: filesArray })) {
-  //   // alert("puedes compartir");
-  //   navigator.share({
-  //     files: filesArray,
-  //     title: 'Prueba',
-  //     text: 'It worked!'
-  //   }).then(()=> console.log('Successfully shared.'))
-  //   .catch((error)=> console.log('Unsuccesful sharing', error));
-  // }
-  // else{
-  //   alert(`You're system doesn't support file sharing`);
-  // }
-  // alert("sí");
-//   const image = new URL("src/frase1.svg", "http://127.0.0.1/FrontEnd");
-//   if (navigator.share) {
-//             navigator.share({
-//                     title: "title.value",
-//                     text: "jaja",
-//                     url: image,
-//                 })
-//                 .then(() => console.log('Successful share'))
-//                 .catch((error) => console.log('Error sharing', error));
-//         } else {
-//             console.log("Web Share API is not supported in your browser.")
-//         }
-// }

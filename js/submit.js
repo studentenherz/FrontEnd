@@ -1,6 +1,7 @@
 // const backEndUrl = "../BackEnd/"
-const corsProxy =  "https://cors-anywhere.herokuapp.com/";
-const backEndUrl = corsProxy + "https://pato-1.herokuapp.com/";
+// const corsProxy =  "https://cors-anywhere.herokuapp.com/";
+const backEndUrlRaw = "https://pato-1.herokuapp.com/";
+const backEndUrl = /*corsProxy + */ backEndUrlRaw;
 
 /**********************************
 *         Login login             *
@@ -29,8 +30,11 @@ loginForm.onsubmit = function (event) {
         localStorage.setItem('token', response['token']);
         localStorage.setItem('name', response['name']);
         localStorage.setItem('username', response['username']);
+        localStorage.setItem('avatar', backEndUrlRaw + response['avatar']);
 
-        setTimeout(()=>{window.location.reload()}, 2000);
+
+        reloadAvatar();
+        setTimeout(()=>{window.location.reload(true)}, 2000);
       }
       else if(response['status'] == 'error'){
         log.style.color = "var(--alert-color)";
@@ -128,7 +132,7 @@ logoutBtn.onclick = function () {
         localStorage.removeItem("name");
         localStorage.removeItem("username");
 
-        location.reload();
+        location.reload(true);
       }
     };
 
@@ -155,16 +159,14 @@ uploadImage.onsubmit = function(event){
   data.append("username", localStorage["username"]);
   data.append("token", localStorage["token"]);
   data.append("upload_image", true);
-  // console.log(data);
 
   xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200){
-      console.log(this.responseText);
+      location.reload(true);
     }
   };
 
   xhttp.open("POST", backEndUrl+"includes/upload.php", true);
-  // xhttp.setRequestHeader("Content-Type",  "application/json");
   xhttp.send(data);
 }
